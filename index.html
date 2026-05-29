@@ -11,6 +11,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Horizontal Scrolling Gallery Styles */
+			.scrolling-gallery {
+				display: flex;
+				overflow-x: auto;
+				gap: 20px;
+				padding-bottom: 20px;
+				margin-bottom: 2rem;
+				scroll-behavior: smooth;
+				-webkit-overflow-scrolling: touch;
+				scroll-snap-type: x mandatory;
+			}
+			.scrolling-gallery::-webkit-scrollbar {
+				height: 8px;
+			}
+			.scrolling-gallery::-webkit-scrollbar-track {
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 4px;
+			}
+			.scrolling-gallery::-webkit-scrollbar-thumb {
+				background: rgba(255, 255, 255, 0.25);
+				border-radius: 4px;
+			}
+			.scrolling-gallery::-webkit-scrollbar-thumb:hover {
+				background: rgba(255, 255, 255, 0.5);
+			}
+			.gallery-item {
+				flex: 0 0 auto;
+				width: 280px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: rgba(255, 255, 255, 0.025);
+				border: solid 1px rgba(255, 255, 255, 0.125);
+				border-radius: 4px;
+				padding: 15px;
+				scroll-snap-align: start;
+			}
+			.gallery-item img {
+				width: 100%;
+				height: auto;
+				border-radius: 4px;
+				margin-bottom: 15px;
+				object-fit: cover;
+			}
+			.gallery-item p {
+				margin: 0;
+				font-size: 0.9em;
+				text-align: center;
+				line-height: 1.5;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -69,32 +121,28 @@
 						<!-- Gallery -->
 							<article id="Gallery">
 								<h2 class="major">Gallery</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
+								
+								<div class="scrolling-gallery">
+									<div class="gallery-item">
+										<img src="images/pic01.jpg" alt="Iteration 1" />
+										<p><strong>Early Prototype</strong><br />Initial testing of the chassis and drive motors.</p>
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+
+									<div class="gallery-item">
+										<img src="images/pic02.jpg" alt="Iteration 2" />
+										<p><strong>Sensor Integration</strong><br />Wiring the line-following sensors and microcontroller.</p>
+									</div>
+
+									<div class="gallery-item">
+										<img src="images/pic03.jpg" alt="Iteration 3" />
+										<p><strong>Final Assembly</strong><br />The completed robot ready for the ECE 5 competition.</p>
+									</div>
+									
+									<div class="gallery-item">
+										<img src="images/pic01.jpg" alt="Competition Day" />
+										<p><strong>Competition Day</strong><br />Team Morris navigating the final course.</p>
+									</div>
+								</div>
 							</article>
 
 						<!-- Elements -->
