@@ -249,25 +249,14 @@
 
 					// When any gallery image is clicked, open the modal
 					images.forEach(function(img) {
-						img.addEventListener("click", function() {
+						img.addEventListener("click", function(event) {
+							event.stopPropagation(); // Stop click from reaching the template script
 							modal.classList.add("show");
-							modalImg.src = this.src; // Copy the clicked image's source to the big image
+							modalImg.src = this.src; 
 						});
 					});
 
 					// Close the modal when clicking the 'X'
-					closeBtn.addEventListener("click", function() {
+					closeBtn.addEventListener("click", function(event) {
+						event.stopPropagation(); // Stop click from reaching the template script
 						modal.classList.remove("show");
-					});
-
-					// Close the modal when clicking anywhere on the dark background
-					modal.addEventListener("click", function(event) {
-						if (event.target !== modalImg) {
-							modal.classList.remove("show");
-						}
-					});
-				});
-			</script>
-
-	</body>
-</html>
