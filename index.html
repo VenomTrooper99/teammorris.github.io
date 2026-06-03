@@ -48,13 +48,8 @@
 				width: 100%;
 				height: auto;
 				border-radius: 4px;
-				margin-bottom: 0;
+				margin-bottom: 0; /* Removed bottom margin since text is below the gallery now */
 				object-fit: cover;
-				cursor: pointer;
-				transition: opacity 0.2s ease-in-out;
-			}
-			.gallery-item img:hover {
-				opacity: 0.7;
 			}
 			.gallery-item p {
 				margin: 15px 0 0 0;
@@ -63,7 +58,7 @@
 				line-height: 1.5;
 			}
 			
-			/* Summary Box Style */
+			/* New Summary Box Style */
 			.gallery-summary {
 				background: rgba(255, 255, 255, 0.025);
 				border: solid 1px rgba(255, 255, 255, 0.125);
@@ -72,51 +67,7 @@
 				margin-top: 10px;
 			}
 			.gallery-summary p:last-child {
-				margin-bottom: 0;
-			}
-
-			/* Full-Screen Image Modal Styles */
-			.image-modal {
-				display: none;
-				position: fixed;
-				z-index: 10000;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				overflow-y: auto;
-				background-color: rgba(0, 0, 0, 0.85);
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-				padding: 40px 20px;
-			}
-			.image-modal.show {
-				display: flex;
-			}
-			.modal-content {
-				margin: auto;
-				display: block;
-				max-width: 90%;
-				max-height: none;
-				border-radius: 4px;
-				box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-			}
-			.close-modal {
-				position: fixed;
-				top: 20px;
-				right: 35px;
-				color: #fff;
-				font-size: 40px;
-				font-weight: bold;
-				cursor: pointer;
-				transition: 0.3s;
-				z-index: 10001;
-			}
-			.close-modal:hover,
-			.close-modal:focus {
-				color: #bbb;
-				text-decoration: none;
+				margin-bottom: 0; /* Keeps the bottom padding neat */
 			}
 		</style>
 	</head>
@@ -151,9 +102,9 @@
 								<h2 class="major">Assembly</h2>
 								
 								<div class="scrolling-gallery">
-									<div class="gallery-item"><img src="images/pic01.jpg" alt="Assembly Part 1" /></div>
-									<div class="gallery-item"><img src="images/pic02.jpg" alt="Assembly Part 2" /></div>
-									<div class="gallery-item"><img src="images/pic03.jpg" alt="Assembly Part 3" /></div>
+									<div class="gallery-item"><img src="images/pic01.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic02.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic03.jpg" alt="" /></div>
 								</div>
 
 								<div class="gallery-summary">
@@ -166,9 +117,9 @@
 								<h2 class="major">Coding</h2>
 								
 								<div class="scrolling-gallery">
-									<div class="gallery-item"><img src="images/pic02.jpg" alt="Coding Logic 1" /></div>
-									<div class="gallery-item"><img src="images/pic01.jpg" alt="Coding Logic 2" /></div>
-									<div class="gallery-item"><img src="images/pic03.jpg" alt="Coding Logic 3" /></div>
+									<div class="gallery-item"><img src="images/pic02.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic01.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic03.jpg" alt="" /></div>
 								</div>
 
 								<div class="gallery-summary">
@@ -181,9 +132,9 @@
 								<h2 class="major">Competition</h2>
 								
 								<div class="scrolling-gallery">
-									<div class="gallery-item"><img src="images/pic03.jpg" alt="Competition Match 1" /></div>
-									<div class="gallery-item"><img src="images/pic02.jpg" alt="Competition Match 2" /></div>
-									<div class="gallery-item"><img src="images/pic01.jpg" alt="Competition Match 3" /></div>
+									<div class="gallery-item"><img src="images/pic03.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic02.jpg" alt="" /></div>
+									<div class="gallery-item"><img src="images/pic01.jpg" alt="" /></div>
 								</div>
 
 								<div class="gallery-summary">
@@ -449,3 +400,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
 											</div>
 										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<div id="bg"></div>
+
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
