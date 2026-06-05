@@ -170,8 +170,8 @@
 								</div>
 
 								<div class="gallery-summary">
-									<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.</p>
+									<p>The software initializes via the setup() function, which runs the Calibrate() and CalibrateHelper() functions to establish baseline black-and-white surface thresholds, before deleting the default loop() task and spawning two dedicated hardware threads. SensorThread() is pinned to Core 0 to continuously fetch and normalize sensor data via the ReadPhotoResistors() function, while PIDThread() is pinned to Core 1 to handle real-time physics and movement. Within this control thread, CalcError() calculates the line's center of mass using a weighted average and a central-sensor multiline filter, passing this spatial deviation to PID_Turn(), which calculates the necessary steering adjustments.</p>
+									<p>RunMotors() and runMotorAtSpeed() translate these adjustments into physical movement by combining them with a base speed, managing PWM constraints, deadband friction, and extreme-turn tank steering, while supplementary functions like ReadPotentiometers() and Print() handle hardware-based PID tuning and serial telemetry tracking.</p>
 								</div>
 							</article>
 
