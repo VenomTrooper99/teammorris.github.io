@@ -120,8 +120,7 @@
 			}
 		</style>
 	</head>
-	
-	<body>
+	<body class="is-preload">
 
 		<div id="wrapper">
 
@@ -158,7 +157,7 @@
 								</div>
 
 								<div class="gallery-summary">
-									<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.</p>
+									<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.</p>
 								</div>
 							</article>
@@ -250,7 +249,7 @@
 					// When any gallery image is clicked, open the modal
 					images.forEach(function(img) {
 						img.addEventListener("click", function(event) {
-							event.stopPropagation(); // Stop click from reaching the template script
+							event.stopPropagation(); // Stops the template from kicking you out
 							modal.classList.add("show");
 							modalImg.src = this.src; 
 						});
@@ -258,5 +257,19 @@
 
 					// Close the modal when clicking the 'X'
 					closeBtn.addEventListener("click", function(event) {
-						event.stopPropagation(); // Stop click from reaching the template script
+						event.stopPropagation(); // Stops the template from kicking you out
 						modal.classList.remove("show");
+					});
+
+					// Close the modal when clicking anywhere on the dark background
+					modal.addEventListener("click", function(event) {
+						event.stopPropagation(); // Stops the template from kicking you out
+						if (event.target !== modalImg) {
+							modal.classList.remove("show");
+						}
+					});
+				});
+			</script>
+
+	</body>
+</html>
