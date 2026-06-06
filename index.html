@@ -157,7 +157,7 @@
 								</div>
 
 								<div class="gallery-summary">
-									<p>Explanation of PID Controls
+									<p>Explanation of PID Controls:
 We kept I = 0 for all scenarios:
 1. Circuit Track
 We selected a moderate P = 60 to provide agile steering through curves that matches our speed setting of 180. We paired this with a substantial D = 30 to act as a predictive brake, helping the robot transition smoothly between sweeping arcs and straightaways.
@@ -165,7 +165,7 @@ We selected a moderate P = 60 to provide agile steering through curves that matc
 For the frequency track, we lowered the proportional gain to P = 40 to prevent the robot from violently overreacting since the speed is 90. Conversely, we maximized the derivative gain to D = 50 so the control loop could instantly sense the rapid rate of error change and snap the robot into alignment for the next immediate gate.
 3. Drag Race Track
 For drag race, we minimized steering drag by dropping the proportional gain to P = 27, allowing the robot to ignore minor sensor fluctuations and focus entirely on maximum forward velocity of 255. We maintained a high D = 47 as a critical safety net to softly catch and counter-steer the robot only if it rapidly drifted off center at top speed.</p>
-									<p>Shared Code Modifications
+									<p>Shared Code Modifications:
 ESP32 Dual-Core FreeRTOS Integration: Pinned the LDR analog reads to Core 0 and the PID/Motor math to Core 1. This decoupled the hardware latency.
 Weighted Sensor Array: Instead of treating all sensors equally, we assigned unique scaling multipliers to the LDR_Weights array (ranging from 1.0 in the center to 4.0 at the extremes). This mathematically amplifies the calculated error when the line drifts toward the outer edges, forcing an immediate, aggressive recovery response.
 Center-of-Mass Intersection Filter: Calculated a preliminary error using only the central 5 sensors. Based on the direction the line was leaning, the code selectively blinded the extreme opposite outer sensors to completely ignore adjacent/crossing tracks.
